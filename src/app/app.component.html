@@ -1,0 +1,16 @@
+<clr-datagrid  >   
+  <clr-dg-column clrDgField="name_a" >Name (A)</clr-dg-column>
+  <clr-dg-column clrDgField="state_a" >State (A)</clr-dg-column>
+  <clr-dg-column clrDgField="name_b" >Name (B)</clr-dg-column>
+  <clr-dg-column clrDgField="state_b" >State (B)</clr-dg-column>
+  
+  <clr-dg-row *clrDgItems="let feature of features" [clrDgItem]="feature">
+      <clr-dg-cell>{{feature.name_a}}</clr-dg-cell>
+      <clr-dg-cell [class.mismatch]="feature.state_a != feature.state_b">{{feature.state_a}}</clr-dg-cell>
+      <clr-dg-cell>{{feature.name_b}}</clr-dg-cell>
+      <clr-dg-cell [class.mismatch]="feature.state_a != feature.state_b"  >{{feature.state_b}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer></clr-dg-footer> 
+
+</clr-datagrid>
